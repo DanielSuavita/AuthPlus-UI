@@ -1,0 +1,25 @@
+ion-grid {
+    --ion-grid-column-padding: 10px;
+    border-collapse: collapse;
+    border-style: hidden;
+    ion-row:first-child {
+        font-weight: bold;
+    }
+    ion-row:nth-of-type(even) {
+        background: #232323;
+    }
+    ion-row:hover {
+        opacity: 0.4;
+    }
+    ion-col {
+        border: 1px solid black;
+        border-bottom: 0;
+        border-right: 0;
+    }
+    ion-col:last-child {
+        border-right: 1px solid black;
+    }
+    ion-row:last-child {
+        border-bottom: 1px solid black;
+    }
+}

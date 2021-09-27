@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+    <app-header></app-header>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-searchbar placeholder="Buscar Usuario por Nombre, Teléfono o Correo Electrónico" inputmode="search" type="text" (ionChange)="FilterUsersList($event)" [debounce]="250" showCancelButton="focus">
+    </ion-searchbar>
+    <ion-grid class="ion-margin">
+        <ion-row>
+            <ion-col>S.No</ion-col>
+            <ion-col>Nombre</ion-col>
+            <ion-col>Celular</ion-col>
+            <ion-col>Correo</ion-col>
+            <ion-col>NombreUsuario</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let User of UsersListFilter |async; index as i">
+            <ion-col>{{ i + 1 }}</ion-col>
+            <ion-col>{{ User.nombre }}</ion-col>
+            <ion-col>{{ User.celular }}</ion-col>
+            <ion-col>{{ User.correo }}</ion-col>
+            <ion-col (click)="GotoLogs(User)">{{ User.nombreUsuario }}</ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
